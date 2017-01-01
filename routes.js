@@ -1,14 +1,16 @@
 const express = require('express')
+const fs = require('fs')
 
 module.exports = function(server) {
   server.post('/upload', (req, res) => {
-    var file = req.body.file
-
-      fs.readFile(file, "utf8", function(error, data) {
-        if(error) { return console.log(error) }
-        let codes = data.split(',')
-        console.log(codes)
-    })
+    let codeArray = []
+    let codes= req.body
+    for (var prop in codes) {
+      codeArray.push(prop.split(',,\r\n'))
+    }
+    let parsedArray = codeArray[0]
+    console.log(codeArray[0])
   })
   
 }
+
