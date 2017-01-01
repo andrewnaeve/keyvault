@@ -6,13 +6,13 @@ const helpers = require('./utils/helpers')
 var Csv = React.createClass({
 
 
+ 
   onDrop: function(acceptedFiles, rejectedFiles) {
 
 
     console.log('acceptedFiles: ', acceptedFiles[0])
     console.log('rejectedFiles: ', rejectedFiles)
     let file = acceptedFiles[0]
-
 
     helpers.readFile(file)
       .then(function(results) {
