@@ -42,4 +42,12 @@ module.exports = function(server) {
     })
   })
 
+  server.get('/api/ableton', (req, res) => {
+    Code.find({})
+    .exec(function(err, doc) {
+      if (err) { console.log(err) }
+      else { res.send(doc) }
+    })
+  })
+
 }

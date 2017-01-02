@@ -16,6 +16,12 @@ var helpers = {
       .then(function(results) {
         return results
       })
+  },
+  allAbleton: function(email) {
+    return axios.get('/api/ableton')
+      .then(function(results) {
+        return results
+      })
   }
 }
 

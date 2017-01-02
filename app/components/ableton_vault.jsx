@@ -19,7 +19,8 @@ const AbletonVault = React.createClass({
   getInitialState() {
     return {
       email: '',
-      results: ''
+      results: '',
+      showResults: false
     }
   },
 
@@ -31,7 +32,8 @@ const AbletonVault = React.createClass({
     .then(function(results) {
       this.setState({
         email: email,
-        results: results.data
+        results: results.data,
+        showResults: true
       })
     }.bind(this))
   },
@@ -46,8 +48,15 @@ const AbletonVault = React.createClass({
       flexDirection: 'column',
       height: '30vh'
     }
+    let flexxing = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column'
+    }
     let codeButton = {
       marginTop: '20px',
+      marginBottom: '20px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -67,13 +76,17 @@ const AbletonVault = React.createClass({
     }
 
       return (
-        <div style={mainDiv}>
-          <form onSubmit={this.handleSubmit}>
-            <label htmlFor="term">Please enter the user's email</label>
-            <input type="text" className="form-control" id="term" ref="email" placeholder="example@aol.com"/>
-            <button type="submit" style={codeButton}><h4>Retrieve Ableton Code</h4></button>
-          </form>
-          <CodeObject code={this.state.results.code} key={this.state.results._id}/>
+        <div style={flexxing}>
+          <div style={mainDiv}>
+            <form onSubmit={this.handleSubmit}>
+              <label htmlFor="term">Please enter the user's email</label>
+              <input type="email" className="form-control" id="email" name="email" ref="email" placeholder="old_man_sonar@hotmail.com" required aria-required="true"/>
+              <button type="submit" style={codeButton}><h4>Retrieve Ableton Code</h4></button>
+            </form>
+          </div>
+
+          { this.state.showResults ? <CodeObject code={this.state.results.code} key={this.state.results._id}/> : null }
+          
         </div>
       )
     
