@@ -32,7 +32,7 @@ module.exports = function(server) {
   })
 
   server.get('/retrieve', (req, res) => {
-    Code.find({}).limit(50)
+    Code.find({used: false}).limit(50)
     .exec(function(err, doc) {
       if (err) { console.log(err)}
       else { res.send(doc) }

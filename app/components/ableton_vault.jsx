@@ -24,15 +24,13 @@ const AbletonVault = React.createClass({
 
     helpers.getCodes()
     .then(function(results) {
-      console.log("in jsx results ", results.data)
       this.setState({
         results: results.data
       })
-      console.log('after setting state: ' + this.state.results[0].code)
     }.bind(this))
   },
 
-  componentDidMount() {
+  componentWillMount() {
     this.loadCodesFromServer()
   },
 
@@ -46,11 +44,11 @@ const AbletonVault = React.createClass({
       let abletonCodes = this.state.results
       return (
         <div>
-          <h1>codes go here</h1>
+          <h1>Ableton Codes</h1>
           {
             Object.keys(abletonCodes)
-            .filter((key) => abletonCodes[key].used === false)
             .map((key, index) => {
+              console.log('keysz: ', abletonCodes[key])
               return (
 
                   <CodeObject {...abletonCodes[key]} key={index} index={index}/>
@@ -58,7 +56,6 @@ const AbletonVault = React.createClass({
               )
             })
           }
-
         </div>
       )
     }

@@ -13,7 +13,6 @@ var helpers = {
   getCodes: function() {
     return axios.get('/retrieve')
       .then(function(results) {
-        console.log("got them codes for ya " + results)
         return results
       })
   }
