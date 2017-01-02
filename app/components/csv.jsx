@@ -1,14 +1,12 @@
 import React from 'react'
+import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
 const Dropzone = require('react-dropzone')
 const helpers = require('./utils/helpers')
 
 var Csv = React.createClass({
 
-
- 
   onDrop: function(acceptedFiles, rejectedFiles) {
-
 
     console.log('acceptedFiles: ', acceptedFiles[0])
     console.log('rejectedFiles: ', rejectedFiles)
@@ -26,11 +24,11 @@ var Csv = React.createClass({
     return (
       <div>
         <Dropzone onDrop={this.onDrop}>
-          <div>Try dropping some files here, or click to select files to upload.</div>
+          <div>Drop a CSV file here to reload Ableton codes to the database.</div>
         </Dropzone>
       </div>
     )
   }
 })
 
-export default Csv
+module.exports = Radium(Csv)
