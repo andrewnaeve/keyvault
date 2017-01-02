@@ -5,8 +5,11 @@ import AbletonVault from './components/ableton_vault'
 
 const Main = React.createClass({
   render() {
+    let style = {
+      height: '100vh'
+    }
     return (
-      <div>
+      <div style={style}>
         <h1>FNI Code Bank</h1>
         <AbletonVault />
       </div>

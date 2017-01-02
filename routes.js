@@ -31,8 +31,11 @@ module.exports = function(server) {
 
   })
 
-  server.get('/retrieve', (req, res) => {
-    Code.find({used: false}).limit(50)
+  server.post('/retrieve', (req, res) => {
+    let email = req.body.email
+
+    console.log('hi', req.body.email)
+    Code.findOneAndUpdate({used: false}, {used: true, email: req.body.email})
     .exec(function(err, doc) {
       if (err) { console.log(err)}
       else { res.send(doc) }

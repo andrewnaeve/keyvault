@@ -10,8 +10,9 @@ var helpers = {
         return results
       })
     },
-  getCodes: function() {
-    return axios.get('/retrieve')
+  getCodes: function(email) {
+    let userEmail = {"email": email}
+    return axios.post('/retrieve', userEmail)
       .then(function(results) {
         return results
       })
