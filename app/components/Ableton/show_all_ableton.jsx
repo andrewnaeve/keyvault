@@ -8,7 +8,7 @@ import CodeTable from './code_table'
 const helpers = require('./utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
-const AllAbleton = React.createClass({
+const ShowAllAbleton = React.createClass({
 
 // propTypes: {
 //   savedCodes: arrayOf(shape({
@@ -81,4 +81,4 @@ const AllAbleton = React.createClass({
 })
   
 
-module.exports =  Radium(AllAbleton)
+module.exports =  Radium(ShowAllAbleton)

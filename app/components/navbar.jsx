@@ -2,9 +2,10 @@ import React from 'react'
 import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
 
-import AllAbleton from './all_ableton'
-import Csv from './csv'
-import AbletonVault from './ableton_vault'
+
+import Csv from './ableton/csv'
+import ShowAllAbleton from './ableton/show_all_ableton'
+import Vault from './vault'
 
 const helpers = require('./utils/helpers')
 
@@ -32,6 +33,11 @@ const Navbar = React.createClass({
             </li>
           </ul>
         </nav>
+
+        <Match exactly pattern="/" component={Vault} />
+        <Match pattern="/abletoncodes" component={ShowAllAbleton} />
+        <Match pattern="/reload" component={Csv} />
+
       </div>
     )
   }

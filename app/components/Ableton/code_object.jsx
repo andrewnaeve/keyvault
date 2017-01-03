@@ -1,7 +1,6 @@
 import React from 'react'
 import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
-import AbletonCodes from './ableton_vault'
 
 const helpers = require('./utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes

@@ -7,7 +7,7 @@ import CodeObject from './code_object'
 const helpers = require('./utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
-const AbletonVault = React.createClass({
+const AbletonMain = React.createClass({
 
 // propTypes: {
 //   savedCodes: arrayOf(shape({
@@ -93,24 +93,6 @@ const AbletonVault = React.createClass({
   }
 })
 
-module.exports =  Radium(AbletonVault)
+module.exports =  Radium(AbletonMain)
 
 
-
-
-
-    // } else {
-    //   let abletonCodes = this.state.results
-    //   return (
-    //     <div>
-    //       <h1>Ableton Codes</h1>
-    //       {
-    //         Object.keys(abletonCodes)
-    //         .map((key, index) => {
-    //           return (
-    //               <CodeObject {...abletonCodes[key]} key={index} index={index}/>
-    //           )
-    //         })
-    //       }
-    //     </div>
-    //   )
