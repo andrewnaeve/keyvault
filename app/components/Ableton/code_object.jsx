@@ -2,7 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
 
-const helpers = require('./utils/helpers')
+const helpers = require('../utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
 const CodeObject = React.createClass({

@@ -4,18 +4,11 @@ import { Match, Miss, Link, Router } from 'react-router'
 import CodeObject from './code_object'
 
 
-const helpers = require('./utils/helpers')
+const helpers = require('../utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
 const AbletonMain = React.createClass({
 
-// propTypes: {
-//   savedCodes: arrayOf(shape({
-//     code: string,
-//     email: string,
-//     used: boolean
-//   }))
-// },
   getInitialState() {
     return {
       email: '',

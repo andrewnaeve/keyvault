@@ -8,3 +8,19 @@ html, body {
   justify-content: center;
   height:100vh;
 }
+
+.showAllPage {
+  margin-top: 80px;
+}
+
+.abletonTitle {
+  color: black;
+}
+
+.codeBorder {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid darkorchid;
+    width: 800px
+}

@@ -5,7 +5,7 @@ import CodeObject from './code_object'
 import CodeTable from './code_table'
 
 
-const helpers = require('./utils/helpers')
+const helpers = require('../utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
 const ShowAllAbleton = React.createClass({
@@ -41,13 +41,7 @@ const ShowAllAbleton = React.createClass({
       flexDirection: 'column',
       alignItems: 'center'
     }
-    let border = {
-      display: 'flex',
 
-      flexDirection: 'column',
-      border: '1px solid black',
-      width: '800px'
-    }
     let heading =  {
       
     }
@@ -59,10 +53,9 @@ const ShowAllAbleton = React.createClass({
     else {
       let abletonCodes = this.state.results
       return (
-        <div style={qflex}>
-          <h1>Ableton Codes</h1>
-          <div style={border}>
-            <div style={heading}></div>
+        <div className="showAllPage" style={qflex}>
+          <h1 className="abletonTitle">Ableton Codes</h1>
+          <div className="codeBorder">
             {
               Object.keys(abletonCodes)
               .map((key, index) => {

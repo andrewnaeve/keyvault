@@ -2,7 +2,7 @@ import React from 'react'
 import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
 const Dropzone = require('react-dropzone')
-const helpers = require('./utils/helpers')
+const helpers = require('../utils/helpers')
 
 var Csv = React.createClass({
 

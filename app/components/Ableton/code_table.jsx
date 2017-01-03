@@ -1,9 +1,9 @@
 import React from 'react'
 import Radium from 'radium'
 import { Match, Miss, Link, Router } from 'react-router'
-import AllAbleton from './all_ableton'
+import ShowAllAbleton from './show_all_ableton'
 
-const helpers = require('./utils/helpers')
+const helpers = require('../utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
 const CodeTable = React.createClass({

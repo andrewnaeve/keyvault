@@ -10,7 +10,7 @@ const fs = require('fs')
 const port = 3000
 // const baseTemplate = fs.readFileSync('./index.html')
 // const template = _.template(baseTemplate)
-const app = require('./app/Entry.jsx').default
+
 
 const cookieParser = require('cookieParser')
 
