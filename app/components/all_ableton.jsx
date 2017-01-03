@@ -49,7 +49,7 @@ const AllAbleton = React.createClass({
       width: '800px'
     }
     let heading =  {
-
+      
     }
     if (this.state.results === '') {
       return (
@@ -62,7 +62,7 @@ const AllAbleton = React.createClass({
         <div style={qflex}>
           <h1>Ableton Codes</h1>
           <div style={border}>
-
+            <div style={heading}></div>
             {
               Object.keys(abletonCodes)
               .map((key, index) => {
@@ -82,23 +82,3 @@ const AllAbleton = React.createClass({
   
 
 module.exports =  Radium(AllAbleton)
-
-
-
-
-
-    // } else {
-    //   let abletonCodes = this.state.results
-    //   return (
-    //     <div>
-    //       <h1>Ableton Codes</h1>
-    //       {
-    //         Object.keys(abletonCodes)
-    //         .map((key, index) => {
-    //           return (
-    //               <CodeObject {...abletonCodes[key]} key={index} index={index}/>
-    //           )
-    //         })
-    //       }
-    //     </div>
-    //   )

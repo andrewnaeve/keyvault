@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   context: __dirname,
-  entry: './app/ClientApp.js',
+  entry: './app/ClientApp.jsx',
   devtool: 'cheap-module-source-map',
   output: {
     path: path.join(__dirname, '/public/'),

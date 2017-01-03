@@ -5,31 +5,33 @@ import { Match, Miss, Link, Router } from 'react-router'
 import AllAbleton from './all_ableton'
 import Csv from './csv'
 import AbletonVault from './ableton_vault'
-const Dropzone = require('react-dropzone')
+
 const helpers = require('./utils/helpers')
 
-var Navbar = React.createClass({
-
-  onDrop: function(acceptedFiles, rejectedFiles) {
-
-    console.log('acceptedFiles: ', acceptedFiles[0])
-    console.log('rejectedFiles: ', rejectedFiles)
-    let file = acceptedFiles[0]
-
-    helpers.readFile(file)
-      .then(function(results) {
-        console.log("results: " + results)
-      }.bind(this))
-
-  },
+const Navbar = React.createClass({
 
 
   render() {
+
+
     return (
-      <div>
-        <Dropzone onDrop={this.onDrop}>
-          <div>Drop a CSV file here to reload Ableton codes to the database.</div>
-        </Dropzone>
+      <div className="navbar">
+        <nav className="navbar navbar-fixed-top" id="navbar-example">
+          <a className="nav-link">
+            <h1 className="name">FNI Code Vault</h1>
+          </a>
+          <ul className="nav navbar-nav float-xs-right ">
+            <li className="nav-item ">
+              <a className="nav-link" href="#home">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#techs">View All</a>
+            </li>
+            <li className="nav-item ">
+              <a className="nav-link" href="#about">Reload</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     )
   }

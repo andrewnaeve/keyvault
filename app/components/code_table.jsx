@@ -8,9 +8,7 @@ const { shape, arrayOf, string } = React.PropTypes
 
 const CodeTable = React.createClass({
   render () {
-    let row = {
-      height: '50px',
-    }
+    
     let codeCell = {
       display: 'inline-block',
       marginLeft: '20px',
@@ -30,13 +28,6 @@ const CodeTable = React.createClass({
       display: 'inline-block',
       lineHeight: '50px',
     }
-
-    let colorWhite = {
-      backgroundColor: '#fff'
-    }
-    let colorBlue = {
-      backgroundColor: '#eaf0f2'
-    }  
 
     let styles={
       even: {
