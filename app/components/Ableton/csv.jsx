@@ -10,6 +10,9 @@ var Csv = React.createClass({
 
     console.log('acceptedFiles: ', acceptedFiles[0])
     console.log('rejectedFiles: ', rejectedFiles)
+
+    acceptedFiles ? alert("Additional codes have been added") : alert("Error")
+
     let file = acceptedFiles[0]
 
     helpers.readFile(file)
@@ -22,13 +25,15 @@ var Csv = React.createClass({
 
   render() {
     return (
-      <div>
-        <Dropzone onDrop={this.onDrop}>
-          <div>Drop a CSV file here to reload Ableton codes to the database.</div>
+      <div className="reloadMe container">
+        <h1>Reload Ableton Codes</h1>
+        <p className="top">To reload, drag a csv file into the drop-zone</p>
+        <Dropzone onDrop={this.onDrop} className="dropBorder compFlex">
+          <div className="text-xs-center display-4"><h1>Reload!</h1></div>
         </Dropzone>
       </div>
     )
   }
 })
 
-module.exports = Radium(Csv)
+module.exports = Csv

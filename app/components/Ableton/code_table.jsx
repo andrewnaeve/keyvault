@@ -16,6 +16,15 @@ const CodeTable = React.createClass({
       width: '350px',
       borderRight: '1px solid black'
     }
+    let usedCodeCell = {
+      color: 'red',
+      display: 'inline-block',
+      marginLeft: '20px',
+      lineHeight: '50px',
+      width: '350px',
+      borderRight: '1px solid black',
+      textDecoration: 'line-through'
+    }
     let emailCell = {
       display: 'inline-block',
       borderRight: '1px solid black',
@@ -39,13 +48,14 @@ const CodeTable = React.createClass({
         backgroundColor: '#eaf0f2'
       }
     }
+ 
     
     return (
       <div>
         <div style={this.props.index === 0 || this.props.index % 2 === 0 ? styles.even : styles.odd }>
-          { this.props.used ? <span style="text-decoration: line-through;"><h6 style={codeCell}>{this.props.code}</h6></span> : <h6 style={codeCell}>{this.props.code}</h6> }
+          { this.props.used ? <h6 style={usedCodeCell}>{this.props.code}</h6> : <h6 style={codeCell}>{this.props.code}</h6> }
           { this.props.email ? <h6 style={emailCell}>{this.props.email}</h6> : <h6 style={emailCell}>N/A</h6> }
-          { this.props.used ? <h6 style={usedCell}>USED</h6> : <h6 style={usedCell}>UNUSED</h6> }
+          { this.props.used ? <h6 style={usedCell}>USED</h6> : <h6 style={usedCell}>Free</h6> }
         </div>
       </div>
 

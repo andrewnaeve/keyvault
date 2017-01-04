@@ -13,7 +13,7 @@ const AbletonMain = React.createClass({
     return {
       email: '',
       results: '',
-      showResults: false
+      showResults: false,
     }
   },
 
@@ -42,6 +42,7 @@ const AbletonMain = React.createClass({
       height: '30vh'
     }
     let flexxing = {
+      marginTop: '80px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
