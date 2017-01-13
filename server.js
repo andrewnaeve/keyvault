@@ -8,9 +8,9 @@ const ServerRouter = ReactRouter.ServerRouter
 const _ = require('lodash')
 const fs = require('fs')
 const port = 3000
-// const baseTemplate = fs.readFileSync('./index.html')
-// const template = _.template(baseTemplate)
-
+const baseTemplate = fs.readFileSync('./public/index.html')
+const template = _.template(baseTemplate)
+const app = require('./app/Entry.jsx').default
 
 const cookieParser = require('cookieParser')
 
@@ -41,24 +41,18 @@ server.use(bodyParser.urlencoded({extended: true}))
 server.use(bodyParser.text())
 server.use(bodyParser.json({type: 'application/vnd.api+json'}))
 
-
-// server.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
 routes(server)
 
-server.get('/', function(req, res){
-  res.sendFile(__dirname + '/public/index.html')
+server.use((req, res) => {
+  const context = ReactRouter.createServerRenderContext()
+  let body = ReactDOMServer.renderToString(
+    React.createElement(ServerRouter, {location: req.url, context: context},
+      React.createElement(app)
+    )
+  )
+  res.write(template({body: body}))
+  res.end()
 })
-
-// server.use((req, res) => {
-//   const context = ReactRouter.createServerRenderContext()
-//   let body = ReactDOMServer.renderToString(
-//     React.createElement(ServerRouter, {location: req.url, context: context},
-//       React.createElement(app)
-//     )
-//   )
-//   res.write(template({body: body}))
-//   res.end()
-// })
 
 console.log('listening on ' + port)
 server.listen(port)
