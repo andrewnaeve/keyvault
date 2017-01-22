@@ -12,7 +12,7 @@ var CodeSchema = new Schema({
   email: {
     type: String,
     default: '',
-    // match: [/.+\@.+\..+/, "Please enter a valid e-mail address"],
+    
   },
 
   used: {

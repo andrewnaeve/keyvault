@@ -35,13 +35,13 @@ const Navbar = React.createClass({
               </li>
             </ul>
           </nav>
-
-
         </div>
+
         <Match exactly pattern="/" component={Vault} />
         <Match pattern="/ableton" component={AbletonMain} />
         <Match pattern="/abletoncodes" component={ShowAllAbleton} />
         <Match pattern="/reload" component={Csv} />
+        
       </div>
     )
   }

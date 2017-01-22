@@ -6,17 +6,18 @@ import CodeTable from './code_table'
 
 
 const helpers = require('../utils/helpers')
-const { shape, arrayOf, string } = React.PropTypes
+const { shape, arrayOf, string, boolean } = React.PropTypes
 
 const ShowAllAbleton = React.createClass({
 
-// propTypes: {
-//   savedCodes: arrayOf(shape({
-//     code: string,
-//     email: string,
-//     used: boolean
-//   }))
-// },
+  propTypes: {
+    savedCodes: arrayOf(shape({
+      code: string,
+      email: string,
+      used: boolean
+    }))
+  },
+  
   getInitialState() {
     return {
       results: '',
