@@ -11,7 +11,7 @@ var Csv = React.createClass({
     console.log('acceptedFiles: ', acceptedFiles[0])
     console.log('rejectedFiles: ', rejectedFiles)
 
-    acceptedFiles ? alert("Additional codes have been added") : alert("Error")
+    acceptedFiles ? alert("Additional codes have been added") : alert("This file is not allowed.")
 
     let file = acceptedFiles[0]
 

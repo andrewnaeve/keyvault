@@ -13,6 +13,7 @@ module.exports = function(server) {
     }
 
     let parsedArray = codeArray[0]
+    
     for (var i = 0; i < parsedArray.length; i++) {
         // codeCollection.push(new Code(parsedArray[i]))
         let codeObject = new Code({code: parsedArray[i]})
@@ -33,7 +34,6 @@ module.exports = function(server) {
 
   server.post('/retrieve', (req, res) => {
     let email = req.body.email
-
     console.log('hi', req.body.email)
     Code.findOneAndUpdate({used: false}, {used: true, email: req.body.email})
     .exec(function(err, doc) {

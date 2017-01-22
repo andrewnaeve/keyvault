@@ -7,6 +7,7 @@ const helpers = require('../utils/helpers')
 const { shape, arrayOf, string } = React.PropTypes
 
 const CodeTable = React.createClass({
+  
   render () {
     
     let codeCell = {

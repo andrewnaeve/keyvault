@@ -8,6 +8,7 @@ const { shape, arrayOf, string } = React.PropTypes
 const CodeObject = React.createClass({
 
   render () {
+
     let codeOutline = {
       display: 'flex',
       alignItems: 'center',
@@ -17,13 +18,12 @@ const CodeObject = React.createClass({
       width: '350px',
       height: '50px'
     }
+    
     return (
 
       <div>
         <h5 style={codeOutline}>{this.props.code}</h5>
       </div>
-
-
     )
   }
 })
