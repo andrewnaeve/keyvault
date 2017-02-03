@@ -2,10 +2,8 @@
 
 This app was built to assist Focusrite Novation Inc. in distributing, and keeping track of software activation codes for our clients. 
 
-A version without the database connected for privacy reasons can be accessed here: https://fnicodevault.herokuapp.com/
-
 ##Technologies used
-HTML5, CSS3, React, Express, MongoDB, Mongoose ORM, Node, Axios, Jest, Enzyme, Radium
+React, React Router v4, Webpack 2, Express, MongoDB, Mongoose ORM, Node, Axios, Jest, Enzyme, Radium, HTML5
 
 ## Authors
 - Andrew Naeve
